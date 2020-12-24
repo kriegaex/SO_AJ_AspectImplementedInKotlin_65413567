@@ -12,9 +12,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <java.source-target.version>8</java.source-target.version>
+    <java.version>14</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
     <aspectj.version>1.9.6</aspectj.version>
   </properties>
 
@@ -27,7 +28,9 @@
           <version>1.12.6</version>
           <configuration>
             <encoding>${project.build.sourceEncoding}</encoding>
-            <complianceLevel>${maven.compiler.target}</complianceLevel>
+            <source>${java.version}</source>
+            <target>${java.version}</target>
+            <complianceLevel>${java.version}</complianceLevel>
             <!--<showWeaveInfo>true</showWeaveInfo>-->
             <Xlint>ignore</Xlint>
             <!--<verbose>true</verbose>-->
